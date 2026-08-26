@@ -73,7 +73,7 @@ class HomeScreen extends StatelessWidget {
   Widget _buildMarketCard(BuildContext context, MarketData? data, IconData icon, Color iconColor) {
     if (data == null) return const Card(child: ListTile(title: Text('جاري التحميل...')));
 
-    final isPositive = data.change24h >= 0;
+    final isPositive = data.priceChangePercentage24h >= 0;
     final currencyFormat = NumberFormat.currency(symbol: '\$', decimalDigits: 2);
 
     return Card(
